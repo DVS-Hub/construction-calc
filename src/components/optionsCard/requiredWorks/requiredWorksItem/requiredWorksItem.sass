@@ -1,0 +1,46 @@
+.requiredWorksItem
+    width: 436px
+    display: flex
+    padding-top: 26px
+    justify-content: space-between
+    &__label
+        display: block
+        // width: 347px
+        color: #FFF
+        font-size: 16px
+        font-weight: 400
+        span
+            color: #FF5F13
+            font-size: 14px
+            font-weight: 400
+    &__input
+
+        width: fit-content
+        display: flex
+        justify-content: center
+        align-items: center
+        appearance: none
+        position: relative
+        width: 15px
+        height: 15px
+        // border: 1px solid #FFF
+        box-shadow: 0 0 0 1px #fff
+
+    &__input:focus
+        width: 16px
+        height: 16px
+        box-shadow: 0 0 0 1px #fff, 0 0 0 2px #FF5F13
+
+    &__input::after
+        content: ""
+        position: absolute
+        width: 0px
+        height: 0px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='13' height='11' viewBox='0 0 13 11' fill='none'%3e%3cpath d='M2 3.999L5.921 8L11.758 1' stroke='white' stroke-width='3'/%3e%3c/svg%3e")
+        background-repeat: no-repeat
+        transition: 500ms
+
+    &__input:checked::after
+        width: 15px
+        height: 12px
+        transition: 500ms

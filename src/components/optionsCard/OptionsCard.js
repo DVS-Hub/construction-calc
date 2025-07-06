@@ -1,0 +1,27 @@
+import ContentSquare from "./square/ContentSquare";
+import RequiredWorks from "./requiredWorks/RequiredWorks";
+import TotalCard from "./totalCard/TotalCard";
+
+import "./optionsCard.sass";
+
+const OptionsCard = () => {
+  return (
+    <div className="wrapper">
+      <div className="tab">
+        <div className="tab__wrapper">
+          <button className="tab__item">Площадь помещения</button>
+          <button className="tab__item">Необходимые работы</button>
+          <div className="card">
+            <ContentSquare />
+            {/* <RequiredWorks /> */}
+          </div>
+        </div>
+      </div>
+      <div className="cost">
+        <TotalCard />
+      </div>
+    </div>
+  );
+};
+
+export default OptionsCard;

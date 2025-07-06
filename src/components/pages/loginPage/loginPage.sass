@@ -1,0 +1,62 @@
+.loginPage
+    width: 603px
+    display: block
+    margin: 0 auto
+    &__title
+        color: #FFF
+        font-size: 40px
+        font-weight: 700
+        margin-top: 125px
+        margin-bottom: 0
+    &__wrapper
+        margin: 0 auto
+        padding-top: 50px
+        padding-bottom: 418px
+        width: 450px
+    &__panel
+        display: flex
+        justify-content: center
+        background: linear-gradient(180deg, rgba(167, 167, 172, 0.13) 0%, rgba(29, 29, 53, 0.90) 100%)
+        box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.50)
+        &-form
+            display: flex
+            flex-direction: column
+            align-items: center
+            padding: 61px 0 65px 0
+            label
+                color: #FFF
+                text-align: center
+                font-size: 24px
+                font-weight: 700
+
+            &-labelPassword
+                padding-top: 30px
+            &-input
+                margin-top: 30px
+                padding: 8px 20px 8px 20px
+                width: 325px
+                border-radius: 4px
+                background: #FFF
+                color: #000
+                font-size: 24px
+                font-weight: 400
+                border: none
+                appearance: none
+            &-input:focus
+                outline: none
+                box-shadow: 0 0 0 1px #fff, 0 0 0 2px #FF5F13
+            button
+                margin-top: 24px
+                width: 185px
+                height: 45px
+                color: #000
+                text-align: center
+                font-size: 24px
+                font-weight: 400
+                border-radius: 4px
+                background: #FFF
+        &-error
+            padding-top: 26px
+            color: #F21919
+            font-size: 18px
+            font-weight: 400
