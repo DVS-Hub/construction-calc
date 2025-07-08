@@ -23,50 +23,52 @@ const requiredWorks = () => {
         </h2>
         <div className="contentRequiredWorks__listItems">
           <RequiredWorksItem
-            names="Демонтаж, зачистка старой отделки"
+            name="Демонтаж, зачистка старой отделки"
             count="20"
             unit="м2"
             id="1"
           />
           <RequiredWorksItem
-            names="Штукатурка стен"
+            name="Штукатурка стен"
             count="20"
             unit="м2"
             id="6"
           />
           <RequiredWorksItem
-            names="Установка плинтуса на пол "
+            name="Установка плинтуса на пол "
             count="20"
             unit="м2"
             id="2"
           />
           <RequiredWorksItem
-            names="Плитка санузлы, пол кухни, коридор"
+            name="Плитка санузлы, пол кухни, коридор"
             count="20"
             unit="м2"
             id="3"
           />
           <RequiredWorksItem
-            names="Натяжной / гипсокартонный потолок"
+            name="Натяжной / гипсокартонный потолок"
             count="20"
             unit="м2"
             id="4"
           />
           <RequiredWorksItem
-            names="Электрика: розетки, выключ., свет"
+            name="Электрика: розетки, выключ., свет"
             count="10000"
             unit="шт/25м2"
             id="5"
           />
           <RequiredWorksItem
-            names="Вставка входной двери"
+            name="Вставка входной двери"
             count="20"
             unit="м2"
             id="7"
           />
         </div>
-        <div className="comment__standart">
-          <Comment arrComments={arr} />
+        <div className="contentRequiredWorks__comment">
+          <div className="comment__standart">
+            <Comment arrComments={arr} />
+          </div>
         </div>
       </div>
     </>

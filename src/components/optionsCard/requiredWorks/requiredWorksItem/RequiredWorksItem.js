@@ -1,23 +1,21 @@
 import "./requiredWorksItem.sass";
 
-const RequiredWorksItem = ({ names, count, unit, id }) => {
+const RequiredWorksItem = ({ name, count, unit, id }) => {
   return (
     <div className="requiredWorksItem">
       <label className="requiredWorksItem__label" htmlFor="checkboxItem">
-        {names}
+        {name}
         <span className="requiredWorksItem__unit">
           {" "}
           {count}руб/{unit}
         </span>
       </label>
-      <div className="border">
-        <input
-          className="requiredWorksItem__input"
-          name="checkboxItem"
-          type="checkbox"
-          id={id}
-        />
-      </div>
+      <input
+        className="requiredWorksItem__input"
+        name="checkboxItem"
+        type="checkbox"
+        id={id}
+      />
     </div>
   );
 };

@@ -9,11 +9,11 @@ const OptionsCard = () => {
     <div className="wrapper">
       <div className="tab">
         <div className="tab__wrapper">
-          <button className="tab__item">Площадь помещения</button>
+          <button className="tab__item active">Площадь помещения</button>
           <button className="tab__item">Необходимые работы</button>
           <div className="card">
-            <ContentSquare />
-            {/* <RequiredWorks /> */}
+            {/* <ContentSquare /> */}
+            <RequiredWorks />
           </div>
         </div>
       </div>

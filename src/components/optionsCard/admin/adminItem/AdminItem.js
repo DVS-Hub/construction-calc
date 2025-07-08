@@ -1,20 +1,20 @@
 import "./adminItem.sass";
 
-const AdminItem = ({ names, count, unit, id }) => {
+const AdminItem = ({ name, count, unit, id }) => {
   return (
     <div className="adminItem">
       <label className="adminItem__label" htmlFor="adminInput">
-        {names}
+        {name}
       </label>
-      <div className="border">
-        <input
-          className="adminItem__input"
-          name="adminInput"
-          type="number"
-          id={id}
-          placeholder={count}
-        />
-      </div>
+      {/* <div className="inputDivider"> */}
+      <input
+        className="adminItem__input"
+        name="adminInput"
+        type="number"
+        id={id}
+        placeholder={count}
+      />
+      {/* </div> */}
       <span className="adminItem__unit">{unit}</span>
     </div>
   );

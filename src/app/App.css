@@ -1,0 +1,7 @@
+.App {
+  background: url(../assets/img/Background.webp) lightgray 50% /cover no-repeat;
+}
+
+.container {
+    padding: 120px 0 199px 100px;
+}

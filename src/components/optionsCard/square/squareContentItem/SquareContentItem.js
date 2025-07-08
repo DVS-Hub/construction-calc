@@ -1,10 +1,10 @@
 import "./squareContentItem.sass";
 
-const SquareContentItem = ({ names, unit }) => {
+const SquareContentItem = ({ name, unit }) => {
   return (
     <div className="squareContentItem">
       <label className="squareContentItem__label" htmlFor="itemInput">
-        {names}
+        {name}
       </label>
       <input
         className="squareContentItem__input"

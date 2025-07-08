@@ -12,19 +12,21 @@ const ContentSquare = () => {
   return (
     <>
       <div className="contentSquare">
-        <SquareContentItem names="Высота потолка в квартире:" unit="м" />
+        <SquareContentItem name="Высота потолка в квартире:" unit="м" />
         <h2 className="contentSquare__title">Площадь отдельных комнат:</h2>
         <div className="contentSquare__listItems">
-          <SquareContentItem names="Гостинная" unit="м2" />
-          <SquareContentItem names="Гостинная с кухней (студия)" unit="м" />
-          <SquareContentItem names="Спальня №1" unit="м" />
-          <SquareContentItem names="Спальня №2" unit="м" />
-          <SquareContentItem names="Гостинная" unit="м" />
-          <SquareContentItem names="Гостинная с кухней (студия)" unit="м" />
-          <SquareContentItem names="Спальня №1" unit="м" />
+          <SquareContentItem name="Гостинная" unit="м2" />
+          <SquareContentItem name="Гостинная с кухней (студия)" unit="м" />
+          <SquareContentItem name="Спальня №1" unit="м" />
+          <SquareContentItem name="Спальня №2" unit="м" />
+          <SquareContentItem name="Гостинная" unit="м" />
+          <SquareContentItem name="Гостинная с кухней (студия)" unit="м" />
+          <SquareContentItem name="Спальня №1" unit="м" />
         </div>
-        <div className="comment__standart">
-          <Comment arrComments={arr} />
+        <div className="contentSquare__comment">
+          <div className="comment__standart">
+            <Comment arrComments={arr} />
+          </div>
         </div>
       </div>
     </>
