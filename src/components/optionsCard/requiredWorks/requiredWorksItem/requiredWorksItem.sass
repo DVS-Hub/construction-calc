@@ -1,33 +1,30 @@
 .requiredWorksItem
-    width: 436px
+    width: clamp(300px, 22.71vw, 436px)
     display: flex
-    padding-top: 26px
+    padding-top: clamp(12px, 1.35vw, 26px)
     justify-content: space-between
     &__label
         display: block
-        // width: 347px
         color: #FFF
-        font-size: 16px
+        font-size: clamp(11px, 0.83vw, 16px)
         font-weight: 400
         span
             color: #FF5F13
-            font-size: 14px
+            font-size: clamp(10px, 0.73vw, 14px)
             font-weight: 400
     &__input
-        width: fit-content
         display: flex
         justify-content: center
         align-items: center
         appearance: none
         position: relative
-        width: 15px
-        height: 15px
-        // border: 1px solid #FFF
+        width: clamp(11px, 0.78vw, 15px)
+        height: clamp(11px, 0.78vw, 15px)
         box-shadow: 0 0 0 1px #fff
 
     &__input:focus
-        width: 16px
-        height: 16px
+        width: clamp(12px, 0.83vw, 16px)
+        height: clamp(12px, 0.83vw, 16px)
         box-shadow: 0 0 0 1px #fff, 0 0 0 2px #FF5F13
 
     &__input::after
@@ -40,6 +37,6 @@
         transition: 500ms
 
     &__input:checked::after
-        width: 15px
-        height: 12px
+        width: clamp(12px, 0.78vw, 15px)
+        height: clamp(11px, 0.63vw, 12px)
         transition: 500ms

@@ -13,12 +13,10 @@ const OptionsCard = () => {
           <button className="tab__item">Необходимые работы</button>
           <div className="card__wrapper">
             <div className="card">
-              <ContentSquare />
-              {/* <RequiredWorks /> */}
+              {/* <ContentSquare /> */}
+              <RequiredWorks />
             </div>
-            {/* <div className="cost"> */}
             <TotalCard />
-            {/* </div> */}
           </div>
         </div>
       </div>
