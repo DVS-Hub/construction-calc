@@ -1,22 +1,22 @@
 .squareContentItem
-    width: 404px
+    width: clamp(300px, 21.04vw, 404px)
     display: flex
-    padding-top: 26px
+    padding-top: clamp(12px, 1.35vw, 26px)
 
     &__label
         display: block
-        width: 308px
+        width: clamp(245px, 16.04vw, 308px)
         color: #FFF
-        font-size: 18px
+        font-size: clamp(15px, 0.93vw, 18px)
         font-weight: 400
 
     &__input
-        margin-right: 8px
-        width: 66px
+        margin-right: clamp(3px, 0.42vw, 8px)
+        width: clamp(40px, 3.44vw, 66px)
         color: white
         text-align: center
         font-family: 'Helvetica'
-        font-size: 18px
+        font-size: clamp(15px, 0.93vw, 18px)
         font-weight: 700
         background: none
         border: none
@@ -31,6 +31,7 @@
         outline: none
 
     &__unit
+        width: clamp(20px, 1.25vw, 24px)
         color: #FFF
-        font-size: 18px
+        font-size: clamp(15px, 0.94vw, 18px)
         font-weight: 700

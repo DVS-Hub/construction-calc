@@ -1,11 +1,11 @@
 .contentSquare
-    padding: 50px 50px 38px 50px
+    padding: clamp(20px, 2vw,50px) clamp(20px, 2vw,50px) clamp(12px, 2vw,38px) clamp(20px, 2vw,50px)
 
     &__title
         margin: 0
-        padding-top: 37px
+        padding-top: clamp(20px, 3vw, 37px)
         color: #FFF
-        font-size: 24px
+        font-size: clamp(16px, 1.25vw, 24px)
         font-weight: 700
         text-decoration-line: underline
         text-decoration-style: solid
@@ -16,8 +16,11 @@
     &__listItems
         padding-top: 14px
         column-count: 2
-        column-gap: 90px
+        column-gap: clamp(10px, 2vw, 90px)
+        @media screen and (max-width: 1280px)
+            &
+                column-count: 1
 
     &__comment
-        margin-top: 51px
-        margin-bottom: 38px
+        margin-top: clamp(20px, 2.66vw, 51px)
+        margin-bottom: clamp(15px, 1.98vw, 38px)

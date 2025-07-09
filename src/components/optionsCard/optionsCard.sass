@@ -1,8 +1,5 @@
 .wrapper
-    margin-top: 50px
-    display: grid
-    grid-template-columns: 1000px 450px
-    gap: 266px
+    margin-top: clamp(17px, 2.6vw, 50px)
 
     .tab
 
@@ -10,14 +7,16 @@
             margin: 0
             .card
                 display: flex
-                width: 100%
+                flex-direction: column
+                align-items: flex-start
                 background: linear-gradient(180deg, rgba(167, 167, 172, 0.13) 0%, rgba(29, 29, 53, 0.90) 100%)
                 box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.50)
+
         &__item
-            width: 240px
-            height: 50px
+            width: clamp(150px, 12vw, 240px)
+            height: clamp(25px, 2.6vw, 50px)
             color: #FFF
-            font-size: 18px
+            font-size: clamp(11px, 0.94vw, 18px)
             font-weight: 700
             background: rgba(6, 6, 6, 0.35)
             border: none
@@ -29,3 +28,11 @@
             cursor: pointer
             &.active
                 border-bottom: 2px solid #FF5F13
+    .card__wrapper
+        display: grid
+        // grid-template-columns: minmax(300px, 1000px) minmax(250px, 450px)
+        grid-template-columns: clamp(300px, 52.06vw, 1000px) clamp(250px, 23.44vw, 450px)
+        gap: clamp(15px, 8vw, 266px)
+        @media screen and (max-width: 768px)
+            &
+                grid-template-columns: minmax(300px, 340px)

@@ -1,10 +1,10 @@
 .comment
-    width: 795px
+    width: clamp(300px, 41.4vw,795px)
 
     &__title
         margin: 0
         color: #FF5F13
-        font-size: 18px
+        font-size: clamp(12px, 1.1vw, 18px)
         font-weight: 400
 
     &__list
@@ -12,7 +12,7 @@
         margin: 0
         &-item
             color: #FFF
-            font-size: 18px
+            font-size: clamp(12px, 1.1vw, 18px)
             font-weight: 400
 
         li::marker

@@ -11,14 +11,16 @@ const OptionsCard = () => {
         <div className="tab__wrapper">
           <button className="tab__item active">Площадь помещения</button>
           <button className="tab__item">Необходимые работы</button>
-          <div className="card">
-            {/* <ContentSquare /> */}
-            <RequiredWorks />
+          <div className="card__wrapper">
+            <div className="card">
+              <ContentSquare />
+              {/* <RequiredWorks /> */}
+            </div>
+            {/* <div className="cost"> */}
+            <TotalCard />
+            {/* </div> */}
           </div>
         </div>
-      </div>
-      <div className="cost">
-        <TotalCard />
       </div>
     </div>
   );

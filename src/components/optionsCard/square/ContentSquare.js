@@ -24,9 +24,9 @@ const ContentSquare = () => {
           <SquareContentItem name="Спальня №1" unit="м" />
         </div>
         <div className="contentSquare__comment">
-          <div className="comment__standart">
-            <Comment arrComments={arr} />
-          </div>
+          {/* <div className="comment__standart"> */}
+          <Comment arrComments={arr} />
+          {/* </div> */}
         </div>
       </div>
     </>

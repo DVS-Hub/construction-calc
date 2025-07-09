@@ -3,5 +3,5 @@
 }
 
 .container {
-    padding: 120px 0 199px 100px;
+    padding: clamp(12px, 3.5vw, 120px) 0 clamp(20px, 3.5vw,199px) clamp(10px, 3.5vw, 100px);
 }
