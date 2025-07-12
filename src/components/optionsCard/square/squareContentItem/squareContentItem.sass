@@ -2,6 +2,10 @@
     width: clamp(300px, 21.04vw, 404px)
     display: flex
     padding-top: clamp(12px, 1.35vw, 26px)
+    @media screen and (max-width: 768px)
+        &
+            width: clamp(223px, 39.06vw, 300px)
+            padding-top: clamp(7px, 1.56vw, 12px)
 
     &__label
         display: block
@@ -9,6 +13,10 @@
         color: #FFF
         font-size: clamp(15px, 0.93vw, 18px)
         font-weight: 400
+        @media screen and (max-width: 768px)
+            &
+                width: clamp(171px, 31.90vw, 245px)
+                font-size: clamp(12px, 1.95vw, 15px)
 
     &__input
         margin-right: clamp(3px, 0.42vw, 8px)
@@ -21,6 +29,10 @@
         background: none
         border: none
         border-bottom: 1px solid #ccc
+        @media screen and (max-width: 768px)
+            &
+                width: clamp(36px, 5.21vw, 40px)
+                font-size: clamp(12px, 1.95vw, 15px)
 
     &__input::placeholder
         color: rgba(255, 254, 254, 0.50)
@@ -35,3 +47,7 @@
         color: #FFF
         font-size: clamp(15px, 0.94vw, 18px)
         font-weight: 700
+        @media screen and (max-width: 768px)
+            &
+                width: clamp(15px, 2.6vw, 20px)
+                font-size: clamp(12px, 1.95vw, 15px)

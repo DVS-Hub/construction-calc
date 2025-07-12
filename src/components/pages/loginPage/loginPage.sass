@@ -1,18 +1,19 @@
 .loginPage
-    width: 603px
-    display: block
-    margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+
     &__title
         color: #FFF
-        font-size: 40px
+        font-size: clamp(20px, 2.08vw, 40px)
         font-weight: 700
-        margin-top: 125px
+        margin-top: clamp(35px, 6.51vw, 125px)
         margin-bottom: 0
+
     &__wrapper
-        margin: 0 auto
-        padding-top: 50px
-        padding-bottom: 418px
-        width: 450px
+        padding-top: clamp(25px, 2.6vw,50px)
+        width: clamp(250px, 23.44vw, 450px)
+
     &__panel
         display: flex
         justify-content: center
@@ -22,23 +23,23 @@
             display: flex
             flex-direction: column
             align-items: center
-            padding: 61px 0 65px 0
+            padding: clamp(10px, 3.18vw, 61px) 0 clamp(11px, 3.39vw, 65px) 0
             label
                 color: #FFF
                 text-align: center
-                font-size: 24px
+                font-size: clamp(18px, 1.25vw, 24px)
                 font-weight: 700
 
             &-labelPassword
-                padding-top: 30px
+                padding-top: clamp(20px, 1.56vw, 30px)
             &-input
-                margin-top: 30px
-                padding: 8px 20px 8px 20px
-                width: 325px
+                margin-top: clamp(15px, 1.56vw, 30px)
+                padding: clamp(3px, 0.42vw,8px) clamp(8px, 1.04vw, 20px) clamp(3px, 0.42vw,8px) clamp(8px, 1.04vw, 20px)
+                width: clamp(200px, 16.93vw, 325px)
                 border-radius: 4px
                 background: #FFF
                 color: #000
-                font-size: 24px
+                font-size: clamp(16px, 1.25vw, 24px)
                 font-weight: 400
                 border: none
                 appearance: none
@@ -46,17 +47,17 @@
                 outline: none
                 box-shadow: 0 0 0 1px #fff, 0 0 0 2px #FF5F13
             button
-                margin-top: 24px
-                width: 185px
-                height: 45px
+                margin-top: clamp(18px, 1.25vw, 24px)
+                width: clamp(120px, 9.64vw, 185px)
+                height: clamp(34px, 2.34vw, 45px)
                 color: #000
                 text-align: center
-                font-size: 24px
+                font-size: clamp(18px, 1.25vw, 24px)
                 font-weight: 400
                 border-radius: 4px
                 background: #FFF
         &-error
-            padding-top: 26px
+            padding-top: clamp(10px, 1.35vw, 26px)
             color: #F21919
-            font-size: 18px
+            font-size: clamp(12px, 0.94vw, 18px)
             font-weight: 400

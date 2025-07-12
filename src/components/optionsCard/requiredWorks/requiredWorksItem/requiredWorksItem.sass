@@ -3,6 +3,10 @@
     display: flex
     padding-top: clamp(12px, 1.35vw, 26px)
     justify-content: space-between
+    @media screen and (max-width: 768px)
+        &
+            width: clamp(280px, 37.76vw, 290px)
+            padding-top: clamp(7px, 1.56vw, 12px)
     &__label
         display: block
         color: #FFF

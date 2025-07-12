@@ -1,21 +1,21 @@
 .adminItem
-    width: 452px
+    width: clamp(320px, 23.54vw, 452px)
     display: flex
     padding-top: 18px
 
     &__label
         display: block
-        width: 334px
+        width: clamp(275px, 17.4vw, 334px)
         color: #FFF
-        font-size: 16px
+        font-size: clamp(12px, 0.83vw, 16px)
         font-weight: 400
     &__input
         margin-right: 5px
-        width: 66px
+        width: clamp(40px, 3.44vw, 66px)
         color: white
         text-align: center
         font-family: 'Helvetica'
-        font-size: 18px
+        font-size: clamp(14px, 0.94vw, 18px)
         font-weight: 700
         background: none
         border: none
@@ -28,5 +28,5 @@
         outline: none
     &__unit
         color: #FFF
-        font-size: 14px
+        font-size: clamp(10px, 0.73vw, 14px)
         font-weight: 700

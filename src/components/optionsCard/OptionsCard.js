@@ -13,8 +13,8 @@ const OptionsCard = () => {
           <button className="tab__item">Необходимые работы</button>
           <div className="card__wrapper">
             <div className="card">
-              {/* <ContentSquare /> */}
-              <RequiredWorks />
+              <ContentSquare />
+              {/* <RequiredWorks /> */}
             </div>
             <TotalCard />
           </div>
