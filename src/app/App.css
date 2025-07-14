@@ -1,5 +1,5 @@
 .App {
-  background: url(../assets/img/Background.webp) lightgray 50% /cover no-repeat;
+  background: url(../assets/img/Background.webp) lightgray 50% /cover no-repeat fixed;
   min-height: 100vh;
 }
 

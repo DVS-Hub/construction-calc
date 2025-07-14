@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ContentSquare from "./square/ContentSquare";
 import RequiredWorks from "./requiredWorks/RequiredWorks";
 import TotalCard from "./totalCard/TotalCard";
@@ -5,16 +6,41 @@ import TotalCard from "./totalCard/TotalCard";
 import "./optionsCard.sass";
 
 const OptionsCard = () => {
+  const [state, setState] = useState("sqr");
+
+  const switchTab = (attr) => {
+    setState(attr);
+  };
+
   return (
     <div className="wrapper">
       <div className="tab">
         <div className="tab__wrapper">
-          <button className="tab__item active">Площадь помещения</button>
-          <button className="tab__item">Необходимые работы</button>
+          <button
+            onClick={(e) => {
+              switchTab(e.target.getAttribute("data-tab"));
+            }}
+            className={`tab__item ${state === "sqr" ? "active" : null}`}
+            data-tab="sqr"
+          >
+            Площадь помещения
+          </button>
+          <button
+            onClick={(e) => {
+              switchTab(e.target.getAttribute("data-tab"));
+            }}
+            className={`tab__item ${state === "wrk" ? "active" : null}`}
+            data-tab="wrk"
+          >
+            Необходимые работы
+          </button>
           <div className="card__wrapper">
             <div className="card">
-              <ContentSquare />
-              {/* <RequiredWorks /> */}
+              {state === "sqr" ? (
+                <ContentSquare />
+              ) : state === "wrk" ? (
+                <RequiredWorks />
+              ) : null}
             </div>
             <TotalCard />
           </div>
