@@ -30,7 +30,7 @@ const LoginPage = () => {
                     <div className="loginPage__panel-form">
                       <label
                         className="loginPage__panel-form-labelLogin"
-                        htmlFor="login"
+                        htmlFor="loginInput"
                       >
                         Логин
                       </label>
@@ -38,11 +38,12 @@ const LoginPage = () => {
                         className="loginPage__panel-form-input"
                         type="text"
                         name="login"
+                        id="loginInput"
                       />
                       <ErrorMessage name="login" component="div" />
                       <label
                         className="loginPage__panel-form-labelPassword"
-                        htmlFor="password"
+                        htmlFor="passwordInput"
                       >
                         Пароль
                       </label>
@@ -50,6 +51,7 @@ const LoginPage = () => {
                         className="loginPage__panel-form-input"
                         type="password"
                         name="password"
+                        id="passwordInput"
                       />
                       <div className="loginPage__panel-error">
                         Неверный логин или пароль

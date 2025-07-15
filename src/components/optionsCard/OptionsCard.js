@@ -5,43 +5,45 @@ import TotalCard from "./totalCard/TotalCard";
 
 import "./optionsCard.sass";
 
+const tabConfig = [
+  { id: "sqr", component: <ContentSquare />, label: "Площадь помещения" },
+  { id: "wrk", component: <RequiredWorks />, label: "Необходимые работы" },
+];
+
+const Btn = ({ id, component, label, activeTab, setActiveTab }) => {
+  return (
+    <button
+      onClick={() => setActiveTab({ id, component })}
+      className={`tab__item ${activeTab.id === id ? "active" : null}`}
+    >
+      {label}
+    </button>
+  );
+};
+
 const OptionsCard = () => {
-  const [state, setState] = useState("sqr");
+  const [state, setState] = useState({
+    id: "sqr",
+    component: <ContentSquare />,
+  });
 
-  const switchTab = (attr) => {
-    setState(attr);
-  };
-
+  const tabs = tabConfig.map(({ id, component, label }) => (
+    <Btn
+      id={id}
+      key={id}
+      component={component}
+      label={label}
+      activeTab={state}
+      setActiveTab={setState}
+    />
+  ));
   return (
     <div className="wrapper">
       <div className="tab">
         <div className="tab__wrapper">
-          <button
-            onClick={(e) => {
-              switchTab(e.target.getAttribute("data-tab"));
-            }}
-            className={`tab__item ${state === "sqr" ? "active" : null}`}
-            data-tab="sqr"
-          >
-            Площадь помещения
-          </button>
-          <button
-            onClick={(e) => {
-              switchTab(e.target.getAttribute("data-tab"));
-            }}
-            className={`tab__item ${state === "wrk" ? "active" : null}`}
-            data-tab="wrk"
-          >
-            Необходимые работы
-          </button>
+          {tabs}
           <div className="card__wrapper">
-            <div className="card">
-              {state === "sqr" ? (
-                <ContentSquare />
-              ) : state === "wrk" ? (
-                <RequiredWorks />
-              ) : null}
-            </div>
+            <div className="card">{state.component}</div>
             <TotalCard />
           </div>
         </div>

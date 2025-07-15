@@ -13,13 +13,15 @@ const SquareContentItem = ({ name, unit, id }) => {
   };
 
   const clazz = value < 0 ? "redBorder" : null;
+
   return (
     <div className="squareContentItem">
-      <label className="squareContentItem__label" htmlFor="itemInput">
+      <label className="squareContentItem__label" htmlFor={id}>
         {name}
       </label>
       <input
         className={`squareContentItem__input ${clazz}`}
+        id={id}
         name="itemInput"
         type="number"
         placeholder="0.0"
