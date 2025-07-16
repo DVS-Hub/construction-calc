@@ -17,7 +17,15 @@ export const fetchRequiredWorks = createAsyncThunk(
 const requiredWorksSlice = createSlice({
   name: "requiredWorks",
   initialState,
-  reducers: {},
+  reducers: {
+    changeCheck: (state, action) => {
+      state.requiredWorks.forEach((item, i) => {
+        if (item.id === action.payload.id) {
+          state.requiredWorks[i].check = action.payload.value;
+        }
+      });
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchRequiredWorks.pending, (state) => {
@@ -25,7 +33,10 @@ const requiredWorksSlice = createSlice({
       })
       .addCase(fetchRequiredWorks.fulfilled, (state, action) => {
         state.requiredWorksLoadingStatus = "idle";
-        state.requiredWorks = action.payload;
+        state.requiredWorks = action.payload.map((item) => ({
+          ...item,
+          check: false,
+        }));
       })
       .addCase(fetchRequiredWorks.rejected, (state) => {
         state.requiredWorksLoadingStatus = "error";
@@ -36,4 +47,4 @@ const requiredWorksSlice = createSlice({
 
 const { actions, reducer } = requiredWorksSlice;
 export default reducer;
-export const {} = actions;
+export const { changeCheck } = actions;
