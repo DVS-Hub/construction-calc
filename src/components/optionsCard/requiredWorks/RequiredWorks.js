@@ -1,5 +1,8 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Comment from "../comment/Comment";
 import RequiredWorksItem from "./requiredWorksItem/RequiredWorksItem";
+import { fetchRequiredWorks } from "./requiredWorksSlice";
 
 import "./requiredWorks.sass";
 
@@ -14,57 +17,35 @@ const arr = [
   </div>,
 ];
 
-const requiredWorks = () => {
+const RequiredWorks = () => {
+  const dispatch = useDispatch();
+  const { requiredWorks, requiredWorksLoadingStatus } = useSelector(
+    (state) => state.requiredWorks
+  );
+
+  useEffect(() => {
+    dispatch(fetchRequiredWorks());
+  }, []);
+
+  const items = requiredWorks.map(({ name, count, unit, id }) => {
+    return (
+      <RequiredWorksItem
+        key={id}
+        name={name}
+        count={count}
+        unit={unit}
+        id={id}
+      />
+    );
+  });
+
   return (
     <>
       <div className="contentRequiredWorks">
         <h2 className="contentRequiredWorks__title">
           Название необходимых работ:
         </h2>
-        <div className="contentRequiredWorks__listItems">
-          <RequiredWorksItem
-            name="Демонтаж, зачистка старой отделки"
-            count="20"
-            unit="м2"
-            id="1"
-          />
-          <RequiredWorksItem
-            name="Штукатурка стен"
-            count="20"
-            unit="м2"
-            id="6"
-          />
-          <RequiredWorksItem
-            name="Установка плинтуса на пол "
-            count="20"
-            unit="м2"
-            id="2"
-          />
-          <RequiredWorksItem
-            name="Плитка санузлы, пол кухни, коридор"
-            count="20"
-            unit="м2"
-            id="3"
-          />
-          <RequiredWorksItem
-            name="Натяжной / гипсокартонный потолок"
-            count="20"
-            unit="м2"
-            id="4"
-          />
-          <RequiredWorksItem
-            name="Электрика: розетки, выключ., свет"
-            count="10000"
-            unit="шт/25м2"
-            id="5"
-          />
-          <RequiredWorksItem
-            name="Вставка входной двери"
-            count="20"
-            unit="м2"
-            id="7"
-          />
-        </div>
+        <div className="contentRequiredWorks__listItems">{items}</div>
         <div className="contentRequiredWorks__comment">
           <div className="comment__standart">
             <Comment arrComments={arr} />
@@ -75,4 +56,4 @@ const requiredWorks = () => {
   );
 };
 
-export default requiredWorks;
+export default RequiredWorks;

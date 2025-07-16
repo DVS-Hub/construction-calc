@@ -23,20 +23,22 @@ const Btn = ({ id, component, label, activeTab, setActiveTab }) => {
 
 const OptionsCard = () => {
   const [state, setState] = useState({
-    id: "sqr",
-    component: <ContentSquare />,
+    id: tabConfig[0].id,
+    component: tabConfig[0].component,
   });
 
-  const tabs = tabConfig.map(({ id, component, label }) => (
-    <Btn
-      id={id}
-      key={id}
-      component={component}
-      label={label}
-      activeTab={state}
-      setActiveTab={setState}
-    />
-  ));
+  const tabs = tabConfig.map(({ id, component, label }) => {
+    return (
+      <Btn
+        id={id}
+        key={id}
+        component={component}
+        label={label}
+        activeTab={state}
+        setActiveTab={setState}
+      />
+    );
+  });
   return (
     <div className="wrapper">
       <div className="tab">
