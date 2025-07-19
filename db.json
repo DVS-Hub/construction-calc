@@ -38,17 +38,17 @@
         {
             "name": "Коридор №1",
             "value": 0,
-            "id": "corridor_1"
+            "id": "corridor_1 tile"
         },
         {
             "name": "Коридор №2",
             "value": 0,
-            "id": "corridor_2"
+            "id": "corridor_2 tile"
         },
         {
             "name": "Кухня",
             "value": 0,
-            "id": "kitchen"
+            "id": "kitchen tile"
         },
         {
             "name": "Кладовая",
@@ -73,122 +73,141 @@
                {
             "name": "Санузел (ванная или душ)",
             "value": 0,
-            "id": "shower"
+            "id": "shower tile"
         },
                {
             "name": "Санузел (туалет)",
             "value": 0,
-            "id": "toilet"
+            "id": "toilet tile"
         }
       ],
     "operations": [
         {
             "name": "Демонтаж, зачистка старой отделки",
             "count": "20",
-            "unit": "руб/м2",
-            "id": "destruction"
+            "unit": "м2",
+            "id": "destruction",
+            "specific": "SC"
+
         },
         {
             "name": "Откосы оконные",
             "count": "20",
-            "unit": "руб/м2",
-            "id": "windows"
+            "unit": "м2",
+            "id": "windows",
+            "specific": "windows"
         },
             {
             "name": "Шпаклевка стен",
             "count": "20",
-            "unit": "руб/м2",
-            "id": "Wall_puttying"
+            "unit": "м2",
+            "id": "Wall_puttying",
+            "specific": "4SHC"
         },
             {
             "name": "Поклейка обоев",
             "count": "20",
-            "unit": "руб/м2",
-            "id": "Wallpapering"
+            "unit": "м2",
+            "id": "Wallpapering",
+            "specific": "4SHC"
         },
             {
             "name": "Покраска стен",
             "count": "20",
-            "unit": "руб/м2",
-            "id": "Wall_painting"
+            "unit": "м2",
+            "id": "Wall_painting",
+            "specific": "4SHC"
         },
             {
             "name": "Натяжной / гипсокартонный потолок",
             "count": "20",
-            "unit": "руб/м2",
-            "id": "ceiling_stretch"
+            "unit": "м2",
+            "id": "ceiling_stretch",
+            "specific": "SC"
         },
             {
             "name": "Покраска потолка",
             "count": "20",
-            "unit": "руб/м2",
-            "id": "ceiling_painting"
+            "unit": "м2",
+            "id": "ceiling_painting",
+            "specific": "SC"
         },
         {
             "name": "Шпаклевка потолка",
             "count": "20",
-            "unit": "руб/м2",
-            "id": "ceiling_puttying"
+            "unit": "м2",
+            "id": "ceiling_puttying",
+            "specific": "SC"
         },
         {
             "name": "Плинтус потолочный",
             "count": "20",
-            "unit": "руб/м2",
-            "id": "ceiling_board"
+            "unit": "м2",
+            "id": "ceiling_board",
+            "specific": "4SC"
         },
         {
             "name": "Стяжка пола",
             "count": "20",
-            "unit": "руб/м2",
-            "id": "floor_screed"
+            "unit": "м2",
+            "id": "floor_screed",
+            "specific": "SC"
         },
         {
             "name": "Укладка ламината",
             "count": "20",
-            "unit": "руб/м2",
-            "id": "floor_laminate"
+            "unit": "м2",
+            "id": "floor_laminate",
+            "specific": "SC"
         },
         {
             "name": "Установка плинтуса на пол",
             "count": "20",
-            "unit": "руб/м2",
-            "id": "floor_board"
+            "unit": "м2",
+            "id": "floor_board",
+            "specific": "4SC"
         },
         {
             "name": "Плитка санузлы, пол кухни, коридор",
             "count": "20",
-            "unit": "руб/м2",
-            "id": "tile_bathroom"
+            "unit": "м2",
+            "id": "tile_bathroom",
+            "specific": "toilet"
         },
         {
             "name": "Разводка, установка сантехники",
             "count": "30000",
-            "unit": "руб",
-            "id": "plumbing"
+            "unit": "",
+            "id": "plumbing",
+            "specific": "C"
         },
         {
             "name": "Электрика: розетки, выключ., свет",
             "count": "40000",
-            "unit": "руб",
-            "id": "electrician"
+            "unit": "",
+            "id": "electrician",
+            "specific": "C"
         },
         {
             "name": "Штукатурка стен",
             "count": "20",
-            "unit": "руб/м2",
-            "id": "wall_plastering"
+            "unit": "м2",
+            "id": "wall_plastering",
+            "specific": "4SHC"
         },
         {
             "name": "Вставка межкомнатных дверей",
             "count": "10000",
-            "unit": "руб/шт/25м2",
-            "id": "doors_interior"
+            "unit": "шт/25м2",
+            "id": "doors_interior",
+            "specific": "indoors"
         },
         {
             "name": "Вставка входной двери",
             "count": "10000",
-            "unit": "руб/шт",
-            "id": "doors_exterior"
+            "unit": "шт",
+            "id": "doors_exterior",
+            "specific": "C"
         }    
     ],
     "admin": {

@@ -1,15 +1,34 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useCallback, useMemo } from "react";
 import { changeCheck } from "../requiredWorksSlice";
+import { createSelector } from "@reduxjs/toolkit";
 
 import "./requiredWorksItem.sass";
 
+const makeSelectItemById = createSelector(
+  (state) => state.requiredWorks.requiredWorks,
+  (_, id) => id,
+  (requiredWorks, id) => {
+    return requiredWorks.find((item) => item.id === id)?.check ?? false;
+  }
+);
+
 const RequiredWorksItem = ({ name, count, unit, id }) => {
   const dispatch = useDispatch();
-  const onChange = (e) => {
-    console.log(e.target.checked);
-    dispatch(changeCheck({ id: id, value: e.target.checked }));
-  };
 
+  const selectItemById = useMemo(
+    () => (state) => makeSelectItemById(state, id),
+    [id]
+  );
+
+  const check = useSelector((state) => selectItemById(state));
+
+  const onChange = useCallback(
+    (e) => {
+      dispatch(changeCheck({ id: id, value: e.target.checked }));
+    },
+    [dispatch, id]
+  );
   return (
     <div className="requiredWorksItem">
       <label className="requiredWorksItem__label" htmlFor="checkboxItem">
@@ -24,7 +43,8 @@ const RequiredWorksItem = ({ name, count, unit, id }) => {
         name="checkboxItem"
         type="checkbox"
         id={id}
-        onClick={onChange}
+        onChange={onChange}
+        checked={check}
       />
     </div>
   );

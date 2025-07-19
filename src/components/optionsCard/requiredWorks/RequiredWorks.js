@@ -1,8 +1,6 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Comment from "../comment/Comment";
 import RequiredWorksItem from "./requiredWorksItem/RequiredWorksItem";
-import { fetchRequiredWorks } from "./requiredWorksSlice";
 
 import "./requiredWorks.sass";
 
@@ -18,14 +16,9 @@ const arr = [
 ];
 
 const RequiredWorks = () => {
-  const dispatch = useDispatch();
   const { requiredWorks, requiredWorksLoadingStatus } = useSelector(
     (state) => state.requiredWorks
   );
-
-  useEffect(() => {
-    dispatch(fetchRequiredWorks());
-  }, []);
 
   const items = requiredWorks.map(({ name, count, unit, id }) => {
     return (

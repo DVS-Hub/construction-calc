@@ -3,8 +3,9 @@ import { useHttp } from "../../../hooks/http.hook";
 
 const initialState = {
   squares: [],
-  ceilingHeigth: 0.0,
+  ceilingHeight: 0.0,
   squaresLoadingStatus: "idle",
+  total: 0,
 };
 
 export const fetchSquares = createAsyncThunk("squares/fetchSquares", () => {
@@ -18,7 +19,7 @@ const squareSlice = createSlice({
   reducers: {
     changeSquare: (state, action) => {
       if (action.payload.id === "ceiling_height") {
-        state.ceilingHeigth = action.payload.value;
+        state.ceilingHeight = action.payload.value;
       } else {
         state.squares.forEach((item, i) => {
           if (item.id === action.payload.id) {
