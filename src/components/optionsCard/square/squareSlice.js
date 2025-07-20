@@ -5,7 +5,6 @@ const initialState = {
   squares: [],
   ceilingHeight: 0.0,
   squaresLoadingStatus: "idle",
-  total: 0,
 };
 
 export const fetchSquares = createAsyncThunk("squares/fetchSquares", () => {

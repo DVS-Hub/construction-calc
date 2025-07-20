@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 import { fetchSquares } from "../components/optionsCard/square/squareSlice";
 import { fetchRequiredWorks } from "../components/optionsCard/requiredWorks/requiredWorksSlice";
+import { fetchCurrency } from "../components/optionsCard/totalCard/totalCardSlice";
 
 import FirstPage from "../components/pages/firstPage/FirstPage";
 import LoginPage from "../components/pages/loginPage/LoginPage";
@@ -17,7 +18,13 @@ function App() {
   useEffect(() => {
     dispatch(fetchSquares());
     dispatch(fetchRequiredWorks());
-  }, []);
+    dispatch(fetchCurrency());
+
+    const currencyInterval = setInterval(() => {
+      dispatch(fetchCurrency());
+    }, 300000);
+    return () => clearInterval(currencyInterval);
+  }, [dispatch]);
 
   return (
     <BrowserRouter>

@@ -15,7 +15,6 @@ const makeSelectItemById = createSelector(
 
 const SquareContentItem = ({ name, unit, id }) => {
   const dispatch = useDispatch();
-  const selectCeilingHeight = (state) => state.squares.ceilingHeight;
 
   const selectItemById = useMemo(
     () => (state) => makeSelectItemById(state, id),
@@ -23,7 +22,7 @@ const SquareContentItem = ({ name, unit, id }) => {
   );
   const value = useSelector(
     id === "ceiling_height"
-      ? selectCeilingHeight
+      ? (state) => state.squares.ceilingHeight
       : (state) => selectItemById(state, id)
   );
 
