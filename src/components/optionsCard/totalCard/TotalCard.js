@@ -15,7 +15,7 @@ const selector = createSelector(
   (state) => state.totalCard.totalCardLoadingStatus,
   (squares, requiredWorks, ceilingHeight, currency, loadingStatus) => {
     const total = countTotal(squares, requiredWorks, ceilingHeight);
-    const totalUsd = (total / currency).toFixed(2);
+    const totalUsd = Math.round(total / currency);
     return { total, totalUsd, loadingStatus };
   }
 );
@@ -25,10 +25,7 @@ const TotalCard = () => {
 
   return (
     <div className="totalCard">
-      <div className="totalCard__costRub">
-        {total}
-        руб
-      </div>
+      <div className="totalCard__costRub">{total} руб</div>
       <div className="totalCard__label">
         Примерная<br></br> общая стоимость работ
       </div>

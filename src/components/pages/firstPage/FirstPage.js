@@ -7,13 +7,17 @@ import "./firstPage.sass";
 
 const FirstPage = () => {
   const navigate = useNavigate();
+
+  const onLogin = () => {
+    localStorage.getItem("login") ? navigate("admin") : navigate("login");
+  };
   return (
     <>
       <Header />
       <OptionsCard />
       <button
         onClick={() => {
-          navigate("login");
+          onLogin();
         }}
         className="btn-admin"
       >

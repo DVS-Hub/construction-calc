@@ -1,9 +1,27 @@
+import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Header from "../../header/Header";
+import { useHttp } from "../../../hooks/http.hook";
+import { useNavigate } from "react-router";
 
 import "./loginPage.sass";
 
 const LoginPage = () => {
+  const [errorLogin, setErrorLogin] = useState(false);
+  const { request } = useHttp();
+  const navigate = useNavigate();
+  const onRequest = async (values) => {
+    const response = await request("http://localhost:3001/admin");
+    if (
+      response.login === values.login &&
+      response.password === values.password
+    ) {
+      navigate("/admin");
+      localStorage.setItem("login", true);
+    } else {
+      setErrorLogin(true);
+    }
+  };
   return (
     <>
       <Header />
@@ -22,6 +40,8 @@ const LoginPage = () => {
               }}
               onSubmit={(values, { setSubmitting }) => {
                 setSubmitting(false);
+                setErrorLogin(false);
+                onRequest(values);
               }}
             >
               {({ isSubmitting }) => {
@@ -40,7 +60,11 @@ const LoginPage = () => {
                         name="login"
                         id="loginInput"
                       />
-                      <ErrorMessage name="login" component="div" />
+                      <ErrorMessage
+                        className="errorMessage"
+                        name="login"
+                        component="div"
+                      />
                       <label
                         className="loginPage__panel-form-labelPassword"
                         htmlFor="passwordInput"
@@ -53,9 +77,11 @@ const LoginPage = () => {
                         name="password"
                         id="passwordInput"
                       />
-                      <div className="loginPage__panel-error">
-                        Неверный логин или пароль
-                      </div>
+                      {errorLogin ? (
+                        <div className="loginPage__panel-error">
+                          Неверный логин или пароль
+                        </div>
+                      ) : null}
                       <button type="submit" disabled={isSubmitting}>
                         Войти
                       </button>

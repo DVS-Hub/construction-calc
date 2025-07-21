@@ -25,6 +25,13 @@ const requiredWorksSlice = createSlice({
         }
       });
     },
+    changeCount: (state, action) => {
+      state.requiredWorks.forEach((item, i) => {
+        if (item.id === action.payload.id) {
+          state.requiredWorks[i].count = action.payload.value;
+        }
+      });
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -47,4 +54,4 @@ const requiredWorksSlice = createSlice({
 
 const { actions, reducer } = requiredWorksSlice;
 export default reducer;
-export const { changeCheck } = actions;
+export const { changeCheck, changeCount } = actions;
