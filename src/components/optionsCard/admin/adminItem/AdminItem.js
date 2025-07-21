@@ -9,13 +9,14 @@ const AdminItem = ({ name, count, unit, id }) => {
   const dispatch = useDispatch();
 
   const onChange = async (e) => {
+    const value = e.target.value > 0 ? e.target.value : 0;
     try {
       await request(
         `http://localhost:3001/operations/${id}`,
         "PATCH",
-        `${JSON.stringify({ count: e.target.value })}`
+        `${JSON.stringify({ count: value })}`
       );
-      dispatch(changeCount({ id, value: e.target.value }));
+      dispatch(changeCount({ id, value }));
     } catch (e) {
       console.log(e);
     }
