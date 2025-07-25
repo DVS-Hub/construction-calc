@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
-import { useHttp } from "../../../../hooks/http.hook";
-import { changeCount } from "../../requiredWorks/requiredWorksSlice";
+
+import { useHttp } from "../../../../../hooks/http.hook";
+import { changeCount } from "../../../../optionsCard/requiredWorks/requiredWorksSlice";
 
 import "./adminItem.sass";
 
@@ -9,7 +10,7 @@ const AdminItem = ({ name, count, unit, id }) => {
   const dispatch = useDispatch();
 
   const onChange = async (e) => {
-    const value = e.target.value > 0 ? e.target.value : 0;
+    const value = e.target.value > 0 ? +e.target.value : 0;
     try {
       await request(
         `http://localhost:3001/operations/${id}`,

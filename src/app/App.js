@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 
@@ -26,6 +26,14 @@ function App() {
     return () => clearInterval(currencyInterval);
   }, [dispatch]);
 
+  const ProtectedRoute = ({ children }) => {
+    const loginIn = localStorage.getItem("login");
+    if (!loginIn) {
+      return <Navigate to="/login" />;
+    }
+    return children;
+  };
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -33,7 +41,14 @@ function App() {
           <Routes>
             <Route path="/" element={<FirstPage />} />
             <Route path="login" element={<LoginPage />} />
-            <Route path="admin" element={<AdminPage />} />
+            <Route
+              path="admin"
+              element={
+                <ProtectedRoute>
+                  <AdminPage />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </div>
       </div>

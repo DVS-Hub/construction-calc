@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useMemo } from "react";
 import AdminItem from "./adminItem/AdminItem";
-import Comment from "../comment/Comment";
+import Comment from "../../../optionsCard/comment/Comment";
 import { useNavigate } from "react-router-dom";
 
 import "./admin.sass";

@@ -1,5 +1,5 @@
 import Header from "../../header/Header";
-import Admin from "../../optionsCard/admin/Admin";
+import Admin from "./admin/Admin";
 
 import "./adminPage.sass";
 

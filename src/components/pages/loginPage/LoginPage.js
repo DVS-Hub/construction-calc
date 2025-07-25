@@ -39,9 +39,11 @@ const LoginPage = () => {
                 return errors;
               }}
               onSubmit={(values, { setSubmitting }) => {
+                const login = values.login.trim();
+                const password = values.password.trim();
                 setSubmitting(false);
                 setErrorLogin(false);
-                onRequest(values);
+                onRequest({ login, password });
               }}
             >
               {({ isSubmitting }) => {
